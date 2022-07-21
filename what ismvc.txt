@@ -1,0 +1,26 @@
+what is MVC  
+
+MVC stands for model view and controller
+MVC is an architecture i.e used to create a dynamic website or web application inside of php
+MVC is used to OOPS concepts
+MVC is used all oops fetaures 
+
+     OOPS features  
+        class
+        object
+        inheritance
+        polymorphism
+        encapsulation
+        abstract class 
+
+
+MVC is used to sperate your logics in form of model view and controller
+MVC is used tomakesecured website or web application.        
+
+
+
+Model: model is used to create  a member function or create a database connectivity.
+
+View : view is used to create a form | templates or all GUI or all designing insideof view 
+
+Controller : controller will handle the logics of your applications 
