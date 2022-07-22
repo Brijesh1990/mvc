@@ -24,7 +24,7 @@
             
             <div class="form-group mt-4">
             
-                 <b>Don't have an Account ? <a href="#">Create Your Account here?</a></b>
+                 <b>Don't have an Account ? <a href="#" data-bs-toggle="modal" data-bs-target="#reg">Create Your Account here?</a></b>
             </div>
 
             </form>

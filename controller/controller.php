@@ -7,6 +7,11 @@ class controller extends model
         parent:: __construct();
         // $name="hi krupanshi";
         // echo $name;
+        //fetch state on register views
+        $st=$this->selectalldata('tbl_state'); 
+        //fetch city on register views
+        $ct=$this->selectalldata('tbl_city'); 
+       
         // load your view here
         if(isset($_SERVER["PATH_INFO"]))
         {
@@ -18,6 +23,7 @@ class controller extends model
                     require_once("navbar.php");
                     require_once("content.php");
                     require_once("footer.php");
+                    require_once("register.php");     
                     break;
                 case '/Contact-us':
                     require_once("index.php");
