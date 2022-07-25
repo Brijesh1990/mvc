@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        function btnstyle()
+        {
+           document.getElementById("btn").style="width:200px;  padding:8px; border:none; background-color:red; color:white";
+           
+           document.getElementById("btn1").style="width:200px;  padding:8px; border:none; background-color:red; color:white";
+           
+           document.getElementById("btn2").style="width:200px;  padding:8px; border:none; background-color:red; color:white";
+           
+           document.getElementById("btn3").style="width:200px;  padding:8px; border:none; background-color:red; color:white";
+
+        }
+
+        function ad()
+        {
+
+            var a=parseInt(prompt("Enter a values :"));
+            var b=parseInt(prompt("Enter b values :"));
+            var c=a+b;
+            alert('Additions of Numbers is :'+c);
+        }
+        
+        function subs()
+        {
+
+            var a=parseInt(prompt("Enter a values :"));
+            var b=parseInt(prompt("Enter b values :"));
+            var c=a-b;
+            alert('substrations of Numbers is :'+c);
+        }
+
+        
+        function dv()
+        {
+
+            var a=parseInt(prompt("Enter a values :"));
+            var b=parseInt(prompt("Enter b values :"));
+            var c=a/b;
+            alert('Divisions of Numbers is :'+c);
+        }
+
+
+        
+        function mul()
+        {
+
+            var a=parseInt(prompt("Enter a values :"));
+            var b=parseInt(prompt("Enter b values :"));
+            var c=a*b;
+            alert('Multiplications of Numbers is :'+c);
+        }
+       
+    </script>
+</head>
+<body onload="btnstyle()">
+
+    <center>    
+
+        <h1>Calculator</h1>
+        <hr style="border: solid 2px black; width: 30%;">
+        <button id="btn" onclick="ad()">click to Add Number</button>
+        <button id="btn1" onclick="subs()">click to Substract Number</button>
+        <button id="btn2" onclick="dv()">click to Divisions Number</button>
+        <button id="btn3" onclick="mul()">click to Multiplications Number</button>
+    </center>
+    
+</body>
+</html>

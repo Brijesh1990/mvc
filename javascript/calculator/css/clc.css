@@ -1,0 +1,25 @@
+.clc
+{
+    width: 60%;
+    height: auto;
+    background-color: lightseagreen;
+    padding: 45px;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+#display
+{
+    width: 98%;
+    height: auto;
+    padding: 8px;
+    border: none;
+}
+
+#btn
+{
+    width: 24.6%;
+    height: auto;
+    padding: 8px;
+    border: none;
+    background-color: white;
+}

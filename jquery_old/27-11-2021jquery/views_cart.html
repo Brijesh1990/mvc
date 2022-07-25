@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='js/jquery.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        
+        $("#del").click(function(){
+
+      
+            $("#crt").remove();
+
+
+        })
+
+
+      }) 
+    </script>
+<script type="text/javascript">
+  function totcrt()
+  {
+      var p=document.getElementById("price").value;
+      var q=document.getElementById("qty").value;
+      var t=p*q;
+      document.getElementById("tot").innerHTML=t;
+
+  }
+   
+
+</script>
+</head>
+<body>
+
+    <table align="center" cellpading="10" cellspacing="10" id="crt">
+        <tr>
+            <th>Id</th>
+            <th>Items</th>
+            <th>Pname</th>
+            <th>price</th>
+            <th>offerprice</th>
+            <th>qty</th>
+            <th>Action</th>
+        </tr>
+
+        <tr>
+            <td align="center">101</td>
+            <td align="center"><img src="images/shoes.webp" width="250px" height="120px"></td>
+            <td align="center">Addidas</td>
+            <td align="center">Rs.4500</td>
+            <td align="center">Rs.<input type="text" name="price" id="price" value="3590" readonly style="border:none"></td>
+            <td align="center"><input type="number" min="1" max="10" value="1" id="qty" onchange="return totcrt(this.value)"></td>
+            <td align="center"><a href="#" id="del">Delete</a></td>
+        </tr>
+
+        <tr>
+            <td align="right" colspan="7"><h3 style="background-color: black; color:white; padding:10px">Subtotal of Products Rs. <label id="tot">3590</label></h3></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
