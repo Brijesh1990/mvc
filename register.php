@@ -10,36 +10,36 @@
         
         <div class="col-md-12 mt-2">
             <div class="form-group">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                     <div class="form-group mt-2">
-                        <input type="file" class="form-control" placeholder="Enter Photo *" required>
+                        <input type="file" name="img" class="form-control" placeholder="Enter Photo *" required>
                        </div>
 
 
     
                 <div class="form-group mt-2">
-                    <input type="text" class="form-control" placeholder="Enter FirstName *" required>
+                    <input type="text" name="fname" class="form-control" placeholder="Enter FirstName *" required>
                    </div>
 
                    <div class="form-group mt-2">
-                    <input type="text" class="form-control" placeholder="Enter LastName *" required>
+                    <input type="text" name="lname" class="form-control" placeholder="Enter LastName *" required>
                    </div>
                    <div class="form-group mt-2">
-                    <input type="text" class="form-control" placeholder="Enter Email *" required>
-                   </div>
-
-                   
-                   <div class="form-group mt-2">
-                    <input type="password" class="form-control" placeholder="Enter Password *" required>
+                    <input type="text" name="em" class="form-control" placeholder="Enter Email *" required>
                    </div>
 
                    
                    <div class="form-group mt-2">
-                    <input type="password" class="form-control" placeholder="Enter Confirm Password *" required>
+                    <input type="password" name="pass" class="form-control" placeholder="Enter Password *" required>
+                   </div>
+
+                   
+                   <div class="form-group mt-2">
+                    <input type="password" name="cpass" class="form-control" placeholder="Enter Confirm Password *" required>
                    </div>
 
                    <div class="form-group mt-2">
-                    <input type="text" class="form-control" placeholder="Enter Phone *" required>
+                    <input type="text" name="phone" class="form-control" placeholder="Enter Phone *" required>
                    </div>
 
                    <div class="form-group mt-2">
@@ -54,7 +54,7 @@
                    </div>
 
                    <div class="form-group mt-2">
-                    <textarea  class="form-control" placeholder="Enter Address *" required></textarea>
+                    <textarea  name="address" class="form-control" placeholder="Enter Address *" required></textarea>
                    </div>
     
                    
@@ -89,7 +89,7 @@
                     </select>
                    </div>
                    <div class="form-group mt-4">
-                    <input type="submit" class="btn btn-success btn-lg" value="Register!"  required>
+                    <input type="submit" name="reg" class="btn btn-success btn-lg" value="Register!"  required>
                     <input type="submit" class="btn btn-danger btn-lg" value="Reset" required>
                   
                 </div>

@@ -4,6 +4,7 @@ class model
      public $conn=""; 
      public function __construct()
      {
+          session_start();
            //model is called here
            try 
            {
@@ -27,6 +28,63 @@ class model
       }
       return $arr;
      }
+
+    //create a member function to insertalldata
+   public function insdata($table,$data)
+   {
+
+    $k=array_keys($data);
+    $kk=implode(",",$k);
+    $v=array_values($data);
+    $vv=implode("','",$v);
+    $insert="insert into $table($kk) values('$vv')";
+    $exe=mysqli_query($this->conn,$insert);
+    return $exe;
+
+   }
+  //create a member function for login user
+  public function loguser($table,$em,$pass)
+  {
+    $select="select * from $table where email='$em' and password='$pass'";
+    $exe=mysqli_query($this->conn,$select);
+    $fetch=mysqli_fetch_array($exe);
+    $no_rows=mysqli_num_rows($exe);
+    if($no_rows==1)
+    {
+      $_SESSION["r_id"]=$fetch["rid"];
+      $_SESSION["fname"]=$fetch["firstname"];
+      $_SESSION["em"]=$fetch["email"];
+
+      return true;
+       
+    }
+    else 
+    {
+     return false;
+    }
+  }  
+//create a member function for manageprofile
+ public function manageprofile($table,$table1,$table2,$where,$where1,$coulmn,$r_id)
+ {
+  $sel="select * from $table join $table1 on $where join $table2 on $where where $coulmn='$r_id'";
+  $exe=mysqli_query($this->conn,$sel);
+  $fetch=mysqli_fetch_array($exe);
+  $arr[]=$fetch;
+  return $arr;
+ }
+
+//create a member function for logout
+public function logout()
+{
+  unset($_SESSION["r_id"]);
+  unset($_SESSION["fname"]);
+  unset($_SESSION["em"]);
+  session_destroy();
+  return true; 
+
+}
+
+
 }
 
 ?>

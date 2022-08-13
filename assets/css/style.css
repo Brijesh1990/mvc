@@ -1,0 +1,13 @@
+.sidebar li 
+{
+display: block !important;
+font-size: 20px;
+padding: 5px 1px !important;
+
+}
+.sidebar a 
+{
+    color: white !important;
+    text-decoration: none !important;
+    list-style-type: none !important;
+}

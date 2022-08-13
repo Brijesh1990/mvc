@@ -14,29 +14,29 @@
                 <form method="post">
 
                 <div class="form-group mt-2">
-                    <input type="text" class="form-control" placeholder="Enter FirstName *" required>
+                    <input type="text"  name="fname" class="form-control" placeholder="Enter FirstName *" required>
                    </div>
 
                    <div class="form-group mt-2">
-                    <input type="text" class="form-control" placeholder="Enter LastName *" required>
+                    <input type="text" name="lname" class="form-control" placeholder="Enter LastName *" required>
                    </div>
                    <div class="form-group mt-2">
-                    <input type="text" class="form-control" placeholder="Enter Email *" required>
-                   </div>
-
-                   <div class="form-group mt-2">
-                    <input type="text" class="form-control" placeholder="Enter Phone *" required>
+                    <input type="text" name="mail" class="form-control" placeholder="Enter Email *" required>
                    </div>
 
                    <div class="form-group mt-2">
-                    <input type="text" class="form-control" placeholder="Enter Subject *" required>
+                    <input type="text" name="phone" class="form-control" placeholder="Enter Phone *" required>
+                   </div>
+
+                   <div class="form-group mt-2">
+                    <input type="text" name="sub" class="form-control" placeholder="Enter Subject *" required>
                    </div>
                    <div class="form-group mt-2">
-                    <textarea  class="form-control" placeholder="Enter Message *" required></textarea>
+                    <textarea  class="form-control" name="msg" placeholder="Enter Message *" required></textarea>
                    </div>
     
                    <div class="form-group mt-4">
-                    <input type="submit" class="btn btn-success btn-lg" value="Send!" placeholder="Enter Email *" required>
+                    <input type="submit" name="addcontact" class="btn btn-success btn-lg" value="Send!" placeholder="Enter Email *" required>
                     <input type="submit" class="btn btn-danger btn-lg" value="Reset" placeholder="Enter Email *" required>
                   
                 </div>
