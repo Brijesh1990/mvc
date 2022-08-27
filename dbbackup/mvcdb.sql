@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2022 at 11:42 AM
+-- Generation Time: Aug 25, 2022 at 12:04 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -50,6 +50,30 @@ INSERT INTO `tbl_city` (`ctid`, `sid`, `ctname`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_contact`
+--
+
+CREATE TABLE `tbl_contact` (
+  `contactid` int(11) NOT NULL,
+  `fname` varchar(255) NOT NULL,
+  `lname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` bigint(11) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `msg` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_contact`
+--
+
+INSERT INTO `tbl_contact` (`contactid`, `fname`, `lname`, `email`, `phone`, `subject`, `msg`) VALUES
+(1, 'brijesh', 'pandey', 'b@gmail.com', 9998003879, 'hi', 'hi'),
+(2, 'brijesh', 'pandey', 'brijesh@gmail.com', 9174578985, 'hi', 'hi');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_register`
 --
 
@@ -67,6 +91,16 @@ CREATE TABLE `tbl_register` (
   `sid` int(11) NOT NULL,
   `ctid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_register`
+--
+
+INSERT INTO `tbl_register` (`rid`, `photo`, `firstname`, `lastname`, `email`, `password`, `phone`, `gender`, `hobby`, `address`, `sid`, `ctid`) VALUES
+(1, 'uploads/users/logo192.png', 'charmi', 'pandya', 'charmi@gmail.com', 'MTIzNDU2', 9998003879, 'female', 'reading,writing,play', 'gondal', 1, 1),
+(2, 'uploads/users/logo192.png', 'nameera', 'shah', 'nameera@gmail.com', 'MTIzNDU2Nzg5', 9998003879, 'female', 'reading,writing', 'ahemdabad', 1, 2),
+(3, 'uploads/users/t3.jpg', 'kuldeep', 'pandya', 'kuldeep@gmail.com', 'MTIzNDU=', 9998003879, 'male', 'reading,writing,play', 'rajkot', 1, 1),
+(4, 'uploads/users/p1.jpg', 'jayraj', 'patel', 'jayraj@gmail.com', 'amF5cmFqMTIz', 9998003879, 'male', 'reading,writing,play', 'hi', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -101,6 +135,12 @@ ALTER TABLE `tbl_city`
   ADD KEY `sid` (`sid`);
 
 --
+-- Indexes for table `tbl_contact`
+--
+ALTER TABLE `tbl_contact`
+  ADD PRIMARY KEY (`contactid`);
+
+--
 -- Indexes for table `tbl_register`
 --
 ALTER TABLE `tbl_register`
@@ -125,10 +165,16 @@ ALTER TABLE `tbl_city`
   MODIFY `ctid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `tbl_contact`
+--
+ALTER TABLE `tbl_contact`
+  MODIFY `contactid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `tbl_register`
 --
 ALTER TABLE `tbl_register`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_state`

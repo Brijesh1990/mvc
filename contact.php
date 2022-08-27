@@ -1,3 +1,9 @@
+<!-- bvalidator validations -->
+<script>
+    $(document).ready(function(){
+        $("#frm").bValidator();
+    })
+</script>
 <div class="container content p-3">
 <h2>Contact with Us</h2>
 <hr>
@@ -11,28 +17,28 @@
         </div>
         <div class="col-md-7 mt-5">
             <div class="form-group">
-                <form method="post">
+                <form method="post" id="frm">
 
                 <div class="form-group mt-2">
-                    <input type="text"  name="fname" class="form-control" placeholder="Enter FirstName *" required>
+                    <input type="text"  name="fname" data-bvalidator="required,alpha" class="form-control" placeholder="Enter FirstName *">
                    </div>
 
                    <div class="form-group mt-2">
-                    <input type="text" name="lname" class="form-control" placeholder="Enter LastName *" required>
+                    <input type="text" name="lname" data-bvalidator="required,alpha" class="form-control" placeholder="Enter LastName *">
                    </div>
                    <div class="form-group mt-2">
-                    <input type="text" name="mail" class="form-control" placeholder="Enter Email *" required>
-                   </div>
-
-                   <div class="form-group mt-2">
-                    <input type="text" name="phone" class="form-control" placeholder="Enter Phone *" required>
+                    <input type="text" name="mail" data-bvalidator="required,email" class="form-control" placeholder="Enter Email *">
                    </div>
 
                    <div class="form-group mt-2">
-                    <input type="text" name="sub" class="form-control" placeholder="Enter Subject *" required>
+                    <input type="text" name="phone" data-bvalidator="required,minlen[10],maxlen[10],digit" class="form-control" placeholder="Enter Phone *">
+                   </div>
+
+                   <div class="form-group mt-2">
+                    <input type="text" name="sub" data-bvalidator="required" class="form-control" placeholder="Enter Subject *">
                    </div>
                    <div class="form-group mt-2">
-                    <textarea  class="form-control" name="msg" placeholder="Enter Message *" required></textarea>
+                    <textarea  class="form-control" name="msg" data-bvalidator="required"placeholder="Enter Message *"></textarea>
                    </div>
     
                    <div class="form-group mt-4">

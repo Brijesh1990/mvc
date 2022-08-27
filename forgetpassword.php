@@ -8,25 +8,20 @@
         <div class="form-group">
             <form method="post">
                <div class="form-group mt-2">
+                <label>Enter Your email *</label>
                 <input type="text" name="em" class="form-control" placeholder="Enter Email *" required>
                </div>
 
-               <div class="form-group mt-4">
-                <input type="password" name="pass" class="form-control" placeholder="Enter Password *" required>
-               </div>
+              
 
                <div class="form-group mt-4">
-                <input type="submit" name="log" class="btn btn-success btn-lg" value="Sign In!" placeholder="Enter Email *" required>
+                <input type="submit" name="frg" class="btn btn-success btn-lg" value="Submit">
                
-                 <b><a href="<?php echo $mainurl;?>ForgetPassword">Forget Password ?</a></b>
+               
             </div>
 
             
-            <div class="form-group mt-4">
-            
-                 <b>Don't have an Account ? <a href="#" data-bs-toggle="modal" data-bs-target="#reg">Create Your Account here?</a></b>
-            </div>
-
+          
             </form>
         </div>
     </div>

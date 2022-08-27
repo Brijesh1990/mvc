@@ -7,11 +7,10 @@
     <li><a href="" class="btn btn-block btn-success text-white">Welcome : <?php echo ucfirst($_SESSION["fname"]); ?></a></li>
     <li><a href="">Manage Profile</a></li>
     <li><a href="">Manage Notifications</a></li>
-    <li><a href="">Change Password</a></li>
+    <li><a href="<?php echo $mainurl;?>Change-password">Change Password</a></li>
     <li><a href="">Delete Account</a></li>
     <li><a href="<?php echo $mainurl;?>?logout-here" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to logout as User?')">Logout!</a></li>
     </ul>
-       
     </div>
     <div class="col-md-8 mt-5">
         <div class="form-group">

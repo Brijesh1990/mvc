@@ -72,6 +72,45 @@ class model
   $arr[]=$fetch;
   return $arr;
  }
+ //create a member function for forgetpassword 
+ public function frgpassword($table,$em,$column)
+ {
+  $select="select $column from $table where email='$em'";
+  $exe=mysqli_query($this->conn,$select);
+  $fetch=mysqli_fetch_array($exe);
+  $num_rows=mysqli_num_rows($exe);
+  if($num_rows==1)
+  {
+    $pass=base64_decode($fetch["password"]);
+    return $pass;
+  }
+  else 
+  {
+    return false;
+  }
+ }
+
+ //create a member function for changepassword 
+ public function changepassword($table,$opass,$npass,$cpass,$id)
+ {
+  $select="select * from $table where rid='$id'";
+  $exe=mysqli_query($this->conn,$select);
+  $fetch=mysqli_fetch_array($exe);
+  $pass=$fetch["password"];
+
+  if($opass==$pass && $npass==$cpass)
+  {
+    $upd="update $table set password='$npass' where rid='$id'";
+    $exe=mysqli_query($this->conn,$upd);
+    return $exe;
+  }
+  else 
+  {
+    return false;
+  }
+
+ }
+
 
 //create a member function for logout
 public function logout()

@@ -51,9 +51,9 @@
             Welcome : <b class="text-success"><?php echo ucfirst($_SESSION["fname"]);?> </b>
           </a>
     <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-    <li ><a class="dropdown-item"  href="">Manage Profile</a></li>
+    <li ><a class="dropdown-item"  href="<?php echo $mainurl;?>ManageProfile">Manage Profile</a></li>
     <li><a class="dropdown-item"  href="">Manage Notifications</a></li>
-    <li><a class="dropdown-item"  href="">Change Password</a></li>
+    <li><a class="dropdown-item"  href="<?php echo $mainurl;?>Change-password">Change Password</a></li>
     <li><a class="dropdown-item"  href="">Delete Account</a></li>
 
     <li><a class="dropdown-item btn btn-sm btn-danger"  href="<?php echo $mainurl;?>?logout-here" onclick="return confirm('Are you sure to Logout user?')">Logout!</a></li>

@@ -114,7 +114,54 @@ class controller extends model
             $r_id=$_SESSION["r_id"];
             $shwdata=$this->manageprofile('tbl_register','tbl_state','tbl_city','tbl_register.sid=tbl_state.sid','tbl_register.ctid=tbl_city.ctid','rid',$r_id);
         }
+        // forget password logic
+        if(isset($_POST["frg"]))
+        {
+            $em=$_POST["em"];
+            $pass=$this->frgpassword('tbl_register',$em,'password');
+            if($pass)
+            {
+               echo "<script>
+               alert('Your password is :'+'$pass')
+               window.location='./';
+               </script>";
+            }
+            else 
+            {
+                echo "<script>
+                alert('Your email does not exist with us try another email')
+                window.location='ForgetPassword';
+                </script>";
+            }
+        }
 
+          // change password logic
+          if(isset($_POST["change"]))
+          {
+              $id=$_SESSION["r_id"];
+              $opass=base64_encode($_POST["opass"]);
+              $npass=base64_encode($_POST["npass"]);
+              $cpass=base64_encode($_POST["cpass"]);
+              $chk=$this->changepassword('tbl_register',$opass,$npass,$cpass,$id);
+              if($chk)
+              {
+                 unset($_SESSION["r_id"]);
+                 unset($_SESSION["fname"]);
+                 unset($_SESSION["em"]);
+
+                 echo "<script>
+                 alert('Your password successfully changed')
+                 window.location='./';
+                 </script>";
+              }
+              else 
+              {
+                  echo "<script>
+                  alert('opass,new password and confirm password does not matched try agian')
+                  window.location='Change-password';
+                  </script>";
+              }
+          }
         //logout here
         if(isset($_GET["logout-here"]))
         {
@@ -139,7 +186,9 @@ class controller extends model
                     require_once("navbar.php");
                     require_once("content.php");
                     require_once("footer.php");
-                    require_once("register.php");     
+                    require_once("register.php");
+                
+                           
                     break;
                 case '/Contact-us':
                     require_once("index.php");
@@ -147,6 +196,7 @@ class controller extends model
                     require_once("navbar.php");
                     require_once("contact.php");
                     require_once("footer.php");
+                  
                     break;
 
                 case '/ManageProfile':
@@ -156,6 +206,22 @@ class controller extends model
                     require_once("manageprofile.php");
                     require_once("footer.php");
                     break;
+
+                    case '/ForgetPassword':
+                        require_once("index.php");
+                        require_once("header.php");
+                        require_once("navbar.php");
+                        require_once("forgetpassword.php");
+                        require_once("footer.php");
+                        break;
+
+                    case '/Change-password':
+                        require_once("index.php");
+                        require_once("header.php");
+                        require_once("navbar.php");
+                        require_once("changepassword.php");
+                        require_once("footer.php");
+                        break;
                 default:
                 require_once("index.php");
                 require_once("header.php");
