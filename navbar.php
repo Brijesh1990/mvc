@@ -52,7 +52,7 @@
           </a>
     <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
     <li ><a class="dropdown-item"  href="<?php echo $mainurl;?>ManageProfile">Manage Profile</a></li>
-    <li><a class="dropdown-item"  href="">Manage Notifications</a></li>
+    <li><a class="dropdown-item"  href="<?php echo $mainurl;?>Manageallusers">Manage All Users <span class="badge badge-danger bg-danger"><?php echo $countuser[0]["total"];?></span></a></li>
     <li><a class="dropdown-item"  href="<?php echo $mainurl;?>Change-password">Change Password</a></li>
     <li><a class="dropdown-item"  href="">Delete Account</a></li>
 

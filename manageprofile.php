@@ -6,9 +6,9 @@
     <ul class="sidebar">
     <li><a href="" class="btn btn-block btn-success text-white">Welcome : <?php echo ucfirst($_SESSION["fname"]); ?></a></li>
     <li><a href="">Manage Profile</a></li>
-    <li><a href="">Manage Notifications</a></li>
+    <li><a href="<?php echo $mainurl;?>Manageallusers">Manage All users <span class="badge badge-danger bg-danger"><?php echo $countuser[0]["total"];?></span></a></li>
     <li><a href="<?php echo $mainurl;?>Change-password">Change Password</a></li>
-    <li><a href="">Delete Account</a></li>
+    <li><a href="<?php echo $mainurl;?>?delete-user=<?php echo base64_encode($shwdata[0]["rid"]); ?>" onclick="return confirm('Are you sure to Delete Account?')">Delete Account</a></li>
     <li><a href="<?php echo $mainurl;?>?logout-here" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to logout as User?')">Logout!</a></li>
     </ul>
     </div>
@@ -60,17 +60,17 @@
                 ?>>
                </div>
 
-               <div class="form-group mt-2">
+               <!-- <div class="form-group mt-2">
                 Reading <input type="checkbox" name="chk[]" value="reading"  required>
                 Writing <input type="checkbox" name="chk[]" value="writing">
                 Play <input type="checkbox" name="chk[]" value="play">
-               </div>
-
+               </div> -->
+<!-- 
                <div class="form-group mt-2">
                 <textarea  name="address" class="form-control" placeholder="Enter Address *" required></textarea>
-               </div>
+               </div> -->
 
-<div class="row">               
+            <!-- <div class="row">               
                <div class="form-group mt-2 col-md-6">
                 <select name="state" class="form-control" placeholder="Enter state *" required>
                     <option value="">-select state-</option>
@@ -100,7 +100,7 @@
                     }
                     ?>
                 </select>
-               </div>
+               </div> -->
                <div class="form-group mt-4">
                 <input type="submit" name="upd" class="btn btn-success btn-lg" value="Update Profile!"  required>
                 <input type="submit" class="btn btn-danger btn-lg" value="Reset" required>

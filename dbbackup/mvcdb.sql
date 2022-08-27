@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2022 at 12:04 PM
+-- Generation Time: Aug 27, 2022 at 11:21 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -100,7 +100,7 @@ INSERT INTO `tbl_register` (`rid`, `photo`, `firstname`, `lastname`, `email`, `p
 (1, 'uploads/users/logo192.png', 'charmi', 'pandya', 'charmi@gmail.com', 'MTIzNDU2', 9998003879, 'female', 'reading,writing,play', 'gondal', 1, 1),
 (2, 'uploads/users/logo192.png', 'nameera', 'shah', 'nameera@gmail.com', 'MTIzNDU2Nzg5', 9998003879, 'female', 'reading,writing', 'ahemdabad', 1, 2),
 (3, 'uploads/users/t3.jpg', 'kuldeep', 'pandya', 'kuldeep@gmail.com', 'MTIzNDU=', 9998003879, 'male', 'reading,writing,play', 'rajkot', 1, 1),
-(4, 'uploads/users/p1.jpg', 'jayraj', 'patel', 'jayraj@gmail.com', 'amF5cmFqMTIz', 9998003879, 'male', 'reading,writing,play', 'hi', 1, 1);
+(5, 'uploads/users/a6.jpg', 'jayraj', 'singh', 'jayraj77@gmail.com', 'MTIzNA==', 7600000533, 'male', 'reading,writing,play', 'hi jayraj', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -174,7 +174,7 @@ ALTER TABLE `tbl_contact`
 -- AUTO_INCREMENT for table `tbl_register`
 --
 ALTER TABLE `tbl_register`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_state`

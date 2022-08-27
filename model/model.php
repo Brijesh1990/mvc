@@ -72,6 +72,37 @@ class model
   $arr[]=$fetch;
   return $arr;
  }
+
+ //create a member function for manageprofile
+ public function manageallusers($table,$table1,$table2,$where,$where1)
+ {
+  $sel="select * from $table join $table1 on $where join $table2 on $where1";
+  $exe=mysqli_query($this->conn,$sel);
+  while($fetch=mysqli_fetch_array($exe))
+  {
+  $arr[]=$fetch;
+  }
+  return $arr;
+ }
+  //create a member function for count all users
+  public function countusers($table,$column)
+  {
+   $sel="select count($column) as total from $table";
+   $exe=mysqli_query($this->conn,$sel);
+   while($fetch=mysqli_fetch_array($exe))
+   {
+   $arr[]=$fetch;
+   }
+   return $arr;
+  }
+
+  //create a member function for update users
+  public function upddata($table,$path,$fnm,$lname,$em,$phone,$g,$column,$id)
+  {
+    $upd="update $table set photo='$path',firstname='$fnm',lastname='$lname',email='$em',phone='$phone',gender='$g' where $column='$id'";
+    $exe=mysqli_query($this->conn,$upd);
+    return $exe;
+  }
  //create a member function for forgetpassword 
  public function frgpassword($table,$em,$column)
  {
@@ -110,6 +141,20 @@ class model
   }
 
  }
+
+//create a member function for delalldata
+
+public function delalldata($table,$id)
+{
+  $column=array_keys($id);
+  $column1=implode(",",$column);
+  $value=array_values($id);
+  $value1=implode("','",$value); 
+  $del="delete from $table where $column1='$value1'";
+  $exe=mysqli_query($this->conn,$del);
+  return $exe;
+
+}
 
 
 //create a member function for logout
