@@ -135,6 +135,7 @@ class controller extends model
             }
         }
 
+
           // change password logic
           if(isset($_POST["change"]))
           {
@@ -162,6 +163,66 @@ class controller extends model
                   </script>";
               }
           }
+
+        //   delete user
+        if(isset($_GET["delete-user"]))
+        {
+
+            $delid=base64_decode($_GET["delete-user"]);
+            $id=array('rid'=>$delid);
+            $chk=$this->delalldata('tbl_register',$id);
+
+            if($chk)
+            {
+                unset($_SESSION["r_id"]);
+                unset($_SESSION["fname"]);
+                unset($_SESSION["em"]);
+                echo "<script>
+                alert('Your profile Deleted succefully')
+                window.location='./';
+                </script>";
+            }
+
+        }
+
+        // manage all users
+
+        $shwusers=$this->manageallusers('tbl_register','tbl_state','tbl_city','tbl_register.sid=tbl_state.sid','tbl_register.ctid=tbl_city.ctid','rid');
+        //count all users
+
+        $countuser=$this->countusers('tbl_register','rid');
+
+        // update users
+        if(isset($_POST["upd"]))
+        {
+            // upload photo
+            $id=$_SESSION["r_id"];
+            $tmp_name=$_FILES["img"]["tmp_name"];
+            $type=$_FILES["img"]["type"];
+            $size=$_FILES["img"]["size"]/1024; 
+            $path="uploads/users/".$_FILES["img"]["name"];
+            move_uploaded_file($tmp_name,$path);
+
+            $fnm=$_POST["fname"];
+            $lname=$_POST["lname"];
+            $em=$_POST["em"];
+            $phone=$_POST["phone"];
+            $g=$_POST["gender"];
+           
+
+            $chk=$this->upddata('tbl_register',$path,$fnm,$lname,$em,$phone,$g,'rid',$id);
+          
+            if($chk)
+            {
+              echo "<script>
+              alert('Thanks for  your account updated succefully with Us')
+              window.location='ManageProfile';
+              </script>";
+           
+        }
+          
+        }
+       
         //logout here
         if(isset($_GET["logout-here"]))
         {
@@ -220,6 +281,14 @@ class controller extends model
                         require_once("header.php");
                         require_once("navbar.php");
                         require_once("changepassword.php");
+                        require_once("footer.php");
+                        break;
+
+                    case '/Manageallusers':
+                        require_once("index.php");
+                        require_once("header.php");
+                        require_once("navbar.php");
+                        require_once("manageallusers.php");
                         require_once("footer.php");
                         break;
                 default:
