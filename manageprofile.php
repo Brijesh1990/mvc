@@ -60,28 +60,37 @@
                 ?>>
                </div>
 
-               <!-- <div class="form-group mt-2">
+               <div class="form-group mt-2">
                 Reading <input type="checkbox" name="chk[]" value="reading"  required>
                 Writing <input type="checkbox" name="chk[]" value="writing">
                 Play <input type="checkbox" name="chk[]" value="play">
-               </div> -->
-<!-- 
-               <div class="form-group mt-2">
-                <textarea  name="address" class="form-control" placeholder="Enter Address *" required></textarea>
-               </div> -->
+               </div>
 
-            <!-- <div class="row">               
+               <div class="form-group mt-2">
+                <textarea  name="address" class="form-control" placeholder="Enter Address *" required><?php echo $shwdata[0]["address"]; ?></textarea>
+               </div>
+
+            <div class="row">               
                <div class="form-group mt-2 col-md-6">
                 <select name="state" class="form-control" placeholder="Enter state *" required>
                     <option value="">-select state-</option>
                     <?php
                     foreach($st as $st1)
                     { 
+                        if($shwdata[0]["sid"]==$st1["sid"])
+                        {
                     ?>
-                    <option value="<?php echo $st1["sid"];?>"><?php echo $st1["sname"];?></option>
+                    <option value="<?php echo $shwdata[0]["sid"];?>" selected="selected"><?php echo $st1["sname"];?></option>
                 
                      <?php 
                     }
+                    else 
+                    {
+                    ?>
+                     <option value="<?php echo $st1["sid"];?>"><?php echo $st1["sname"];?></option>
+                  <?php 
+                    }
+                }
                     ?>
                 </select>
                </div>
@@ -93,14 +102,25 @@
                     <?php
                     foreach($ct as $ct1)
                     { 
+                        if($shwdata[0]["ctid"]==$ct1["ctid"])
+                        {
                     ?>
-                    <option value="<?php echo $ct1["ctid"];?>"><?php echo $ct1["ctname"];?></option>
+                    <option value="<?php echo $shwdata[0]["ctid"];?>" selected="selected"><?php echo $ct1["ctname"];?></option>
                 
                      <?php 
                     }
+                    else 
+                    {
                     ?>
-                </select>
-               </div> -->
+                 <option value="<?php echo $ct1["ctid"];?>"><?php echo $ct1["ctname"];?></option>
+                
+                 <?php 
+                    }
+                }
+                    ?>    
+            </select>
+
+               </div>
                <div class="form-group mt-4">
                 <input type="submit" name="upd" class="btn btn-success btn-lg" value="Update Profile!"  required>
                 <input type="submit" class="btn btn-danger btn-lg" value="Reset" required>
